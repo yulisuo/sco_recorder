@@ -18,3 +18,10 @@ mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
 mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
 ```
 
+
+
+#### bug
+
+1）stop sco可能还有问题
+
+2）申请权限后，没有开始start

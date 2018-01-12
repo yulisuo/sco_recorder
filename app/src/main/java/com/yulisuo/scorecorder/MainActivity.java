@@ -1,4 +1,4 @@
-package com.yulisuo.scorecorder.scorecorder;
+package com.yulisuo.scorecorder;
 
 import android.Manifest;
 import android.content.BroadcastReceiver;
@@ -10,7 +10,6 @@ import android.media.AudioManager;
 import android.media.MediaRecorder;
 import android.os.Build;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -21,15 +20,13 @@ import android.widget.Button;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 @RequiresApi(api = Build.VERSION_CODES.M)
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "recorder";
     private AudioManager am;
-    private Button btnStart,btnStop;
+    private Button btnStart, btnStop;
     private MediaRecorder mediaRecorder;
     private int mScoState = AudioManager.SCO_AUDIO_STATE_DISCONNECTED;
     private MyReceiver mReceiver;
@@ -49,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void check() {
         int grantedCount = 0;
-        for (int i = 0;i < permissions.length; i++) {
+        for (int i = 0; i < permissions.length; i++) {
             if (checkSelfPermission(permissions[i]) == PackageManager.PERMISSION_GRANTED) {
                 grantedCount++;
             }
@@ -65,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         int grantResultSum = 0;
-        for(int grantResult : grantResults) {
+        for (int grantResult : grantResults) {
             if (grantResult == PackageManager.PERMISSION_GRANTED) {
                 grantResultSum += grantResult;
             }

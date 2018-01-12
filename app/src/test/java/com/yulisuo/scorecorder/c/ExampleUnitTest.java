@@ -1,4 +1,4 @@
-package com.yulisuo.scorecorder.scorecorder;
+package com.yulisuo.scorecorder.c;
 
 import org.junit.Test;
 
