@@ -1,4 +1,4 @@
-package com.yulisuo.scorecorder.c;
+package com.yulisuo.scorecorder;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.yulisuo.com.yulisuo.a.b.c.com.yulisuo.a.b.c", appContext.getPackageName());
+        assertEquals("com.yulisuo.scorecorder", appContext.getPackageName());
     }
 }
